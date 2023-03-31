@@ -4,19 +4,15 @@ import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleLocalDa
 import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleLocalDataSourceImpl
 import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleRemoteDataSource
 import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleRemoteDataSourceImpl
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module
-class DataModule {
+interface DataModule {
 
-    @Provides
-    fun provLocalData(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource {
-        return impl
-    }
+    @Binds
+    fun bindLocalData(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
 
-    @Provides
-    fun provRemoteData(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource {
-        return impl
-    }
+    @Binds
+    fun provRemoteData(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }
