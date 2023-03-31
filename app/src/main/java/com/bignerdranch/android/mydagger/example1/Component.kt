@@ -12,6 +12,7 @@ class Component {
     }
 
     fun injectComp(activity: Activity){
-        activity.comp = getComp()
+
+//        activity.keyboard = Keyboard()
     }
 }
