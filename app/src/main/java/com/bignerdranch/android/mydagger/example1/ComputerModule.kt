@@ -9,7 +9,6 @@ class ComputerModule {
     fun provStorage(): Storage {
         return Storage()
     }
-
     @Provides
     fun provProcessor(): Processor {
         return Processor()

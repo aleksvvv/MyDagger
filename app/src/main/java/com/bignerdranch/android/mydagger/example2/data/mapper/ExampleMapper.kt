@@ -1,6 +1,7 @@
 package com.bignerdranch.android.mydagger.example2.data.mapper
 
-class ExampleMapper {
+import javax.inject.Inject
+ class ExampleMapper @Inject constructor() {
     fun map(){
 
     }
