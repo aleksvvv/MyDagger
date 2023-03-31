@@ -1,9 +1,10 @@
 package com.bignerdranch.android.mydagger.example1
 
-@dagger.Component
+@dagger.Component(modules = [ComputerModule::class])
 interface NewComponent {
 
-   fun getKeyboard():Keyboard
+   fun getComputer():Computer
+   fun getStorage():Storage
 
     fun inject(activity: Activity)
 

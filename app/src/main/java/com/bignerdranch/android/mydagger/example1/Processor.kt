@@ -1,6 +1,4 @@
 package com.bignerdranch.android.mydagger.example1
 
-
-
-class Processor {
+class Processor{
 }
