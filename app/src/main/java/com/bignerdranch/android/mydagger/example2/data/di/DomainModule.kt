@@ -4,6 +4,7 @@ import com.bignerdranch.android.mydagger.example2.data.repository.ExampleReposit
 import com.bignerdranch.android.mydagger.example2.domain.ExampleRepository
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
 interface DomainModule {
