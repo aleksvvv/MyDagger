@@ -11,13 +11,12 @@ interface ExampleComponent {
 
     fun inject(activity: MainActivity)
 
-    @Component.Builder
-    interface ExampleComponentBuilder {
+    @Component.Factory
+    interface ExampleComponentFactory{
 
-        @BindsInstance
-        fun context(context: Context): ExampleComponentBuilder
-        @BindsInstance
-        fun timeCurrent(time: Long): ExampleComponentBuilder
-        fun build(): ExampleComponent
+        fun create(
+           @BindsInstance context: Context,
+           @BindsInstance time: Long
+        ):ExampleComponent
     }
 }
