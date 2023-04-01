@@ -1,16 +1,12 @@
 package com.bignerdranch.android.mydagger.example2.presentation
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bignerdranch.android.mydagger.R
-import com.bignerdranch.android.mydagger.example1.DaggerNewComponent
-import com.bignerdranch.android.mydagger.example2.data.di.ContextModule
 import com.bignerdranch.android.mydagger.example2.data.di.DaggerExampleComponent
-import com.bignerdranch.android.mydagger.example2.data.di.DataModule
 
 import javax.inject.Inject
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: ExampleViewModel
     private val component by lazy {
-        DaggerExampleComponent.builder().contextModule(ContextModule(this))
+        DaggerExampleComponent.builder().context(application)
             .build()
     }
 
