@@ -1,6 +1,7 @@
 package com.bignerdranch.android.mydagger.example2.domain
 
 import javax.inject.Inject
+
 class ExampleUseCase @Inject constructor(
     private val repository: ExampleRepository
 ) {
