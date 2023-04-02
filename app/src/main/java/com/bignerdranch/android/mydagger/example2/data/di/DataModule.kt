@@ -11,10 +11,10 @@ import dagger.Provides
 
 @Module
 interface DataModule {
-
+@ApplicationScope
     @Binds
     fun bindLocalData(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
-
+@ApplicationScope
     @Binds
     fun provRemoteData(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }
