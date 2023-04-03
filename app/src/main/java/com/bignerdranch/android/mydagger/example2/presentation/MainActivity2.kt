@@ -1,18 +1,13 @@
 package com.bignerdranch.android.mydagger.example2.presentation
 
-
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bignerdranch.android.mydagger.R
 import com.bignerdranch.android.mydagger.example2.AppComponent
 import javax.inject.Inject
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -26,7 +21,8 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         (application as AppComponent).component
-            .activityComponentFactory().create("ID 1")
+            .activityComponentFactory()
+            .create("ID 2")
 
     }
 
@@ -34,16 +30,10 @@ class MainActivity : AppCompatActivity() {
         component.inject(this)
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
 
         viewModel.method()
         viewModel2.method()
 
-        findViewById<TextView>(R.id.text_test).setOnClickListener {
-            intent= Intent(this, MainActivity2::class.java).apply {
-                startActivity(this)
-            }
-
-        }
     }
 }

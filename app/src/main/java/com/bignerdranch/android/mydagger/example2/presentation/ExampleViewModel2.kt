@@ -8,6 +8,7 @@ import javax.inject.Inject
 
 class ExampleViewModel2 @Inject constructor (
     private val useCase: ExampleUseCase
+
 ): ViewModel() {
 
     fun method() {
