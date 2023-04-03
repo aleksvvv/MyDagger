@@ -1,20 +1,24 @@
 package com.bignerdranch.android.mydagger.example2.data.di
 
 import android.content.Context
-import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleLocalDataSource
-import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleLocalDataSourceImpl
-import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleRemoteDataSource
-import com.bignerdranch.android.mydagger.example2.data.datasource.ExampleRemoteDataSourceImpl
+import com.bignerdranch.android.mydagger.example2.data.datasource.*
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 
 @Module
 interface DataModule {
-@ApplicationScope
+    @ApplicationScope
     @Binds
     fun bindLocalData(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
-@ApplicationScope
+
+    @ApplicationScope
     @Binds
+    @RemoteQualifier
     fun provRemoteData(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+
+    @ApplicationScope
+    @Binds
+    @RemoteTestQualifier
+    fun provRemoteDataTest(impl: ExampleRemoteDataSourceTestImpl): ExampleRemoteDataSource
 }
