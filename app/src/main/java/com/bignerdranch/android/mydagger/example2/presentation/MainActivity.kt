@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     private val component by lazy {
         (application as AppComponent).component
-            .activityComponentFactory().create("ID 1")
+            .activityComponentFactory()
+            .create("ID 1","Name 1")
 
     }
 
